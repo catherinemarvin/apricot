@@ -1,0 +1,7 @@
+#images
+
+:javascript
+  $(function () {
+    window.router = new Apricot.Routers.ImagesRouter({images: #{@images.to_json.html_safe}});
+    Backbone.history.start();
+  });
