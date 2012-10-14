@@ -17,4 +17,5 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/apricot
+//= require jquery.masonry.min.js
 //= require_tree .
