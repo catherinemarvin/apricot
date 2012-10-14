@@ -11,7 +11,7 @@ class Apricot.Views.Images.IndexView extends Backbone.View
 
   addOne: (image) =>
     view = new Apricot.Views.Images.ImageView({model : image})
-    @$("tbody").append(view.render().el)
+    @$("#thumbnails").append(view.render().el)
 
   render: =>
     $(@el).html(@template(images: @options.images.toJSON() ))
