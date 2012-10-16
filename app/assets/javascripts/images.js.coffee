@@ -9,3 +9,7 @@ container.imagesLoaded( () ->
 		itemSelector : '.box'
 	})
 )
+
+$(".box").click((e) ->
+	console.log "hi"
+)
