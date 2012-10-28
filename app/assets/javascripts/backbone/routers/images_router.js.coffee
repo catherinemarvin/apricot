@@ -7,13 +7,16 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
 
 
   routes:
-    "new"      : "newImage"
-    "index"    : "index"
+    "submit" : "submitImage"
+    "index" : "index"
+    "random" : "random"
+    "tags" :  "tags"
+    "info" : "info"
     ":id/edit" : "edit"
-    ":id"      : "show"
-    ".*"        : "index"
+    ":id" : "show"
+    ".*" : "index"
 
-  newImage: ->
+  submitImage: ->
     @view = new Apricot.Views.Images.NewView(collection: @images)
     $("#images").html(@view.render().el)
 
@@ -29,4 +32,14 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
   edit: (id) ->
     image = @images.get(id)
     @view = new Apricot.Views.Images.EditView(model: image)
+    $("#images").html(@view.render().el)
+
+  random: ->
+    $("#images").html("Random is THE FUTURE")
+
+  tags: ->
+    $("#images").html("Tagging is illegal :|")
+
+  info: ->
+    @view = new Apricot.Views.Develop.Information
     $("#images").html(@view.render().el)
