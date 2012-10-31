@@ -1,7 +1,7 @@
 Apricot.Views.Images ||= {}
 
-class Apricot.Views.Images.NewView extends Backbone.View
-  template: JST["backbone/templates/images/new"]
+class Apricot.Views.Images.SubmitView extends Backbone.View
+  template: JST["backbone/templates/images/submit"]
 
   events:
     "submit #new-image": "save"

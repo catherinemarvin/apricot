@@ -17,7 +17,7 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     ".*" : "index"
 
   submitImage: ->
-    @view = new Apricot.Views.Images.NewView(collection: @images)
+    @view = new Apricot.Views.Images.SubmitView(collection: @images)
     $("#images").html(@view.render().el)
 
   index: ->
