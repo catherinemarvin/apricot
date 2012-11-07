@@ -18,16 +18,19 @@ class Apricot.Views.Images.SubmitView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    @model.unset("errors")
+    console.log "hi"
+    data = new FormData()
 
-    @collection.create(@model.toJSON(),
-      success: (image) =>
-        @model = image
-        window.location.hash = "/#{@model.id}"
+    # @model.unset("errors")
 
-      error: (image, jqXHR) =>
-        @model.set({errors: $.parseJSON(jqXHR.responseText)})
-    )
+    # @collection.create(@model.toJSON(),
+    #   success: (image) =>
+    #     @model = image
+    #     window.location.hash = "/#{@model.id}"
+
+    #   error: (image, jqXHR) =>
+    #     @model.set({errors: $.parseJSON(jqXHR.responseText)})
+    # )
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))

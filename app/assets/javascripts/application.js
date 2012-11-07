@@ -18,4 +18,5 @@
 //= require backbone_datalink
 //= require backbone/apricot
 //= require jquery.masonry.min.js
+//= require jquery.iframe-transport.js
 //= require_tree .

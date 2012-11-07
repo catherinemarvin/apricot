@@ -10,33 +10,6 @@ class ImagesController < ApplicationController
     end
   end
 
-  # GET /images/1
-  # GET /images/1.json
-  def show
-    @image = Image.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @image }
-    end
-  end
-
-  # GET /images/new
-  # GET /images/new.json
-  def new
-    @image = Image.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @image }
-    end
-  end
-
-  # GET /images/1/edit
-  def edit
-    @image = Image.find(params[:id])
-  end
-
   # POST /images
   # POST /images.json
   def create
@@ -44,8 +17,9 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        format.json { render json: @image, status: :created, location: @image }
+        # format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        # format.json { render json: @image, status: :created, location: @image }
+        format.html { render json: @image, status: :created, location: @image }
       else
         format.html { render action: "new" }
         format.json { render json: @image.errors, status: :unprocessable_entity }
