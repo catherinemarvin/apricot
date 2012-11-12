@@ -15,8 +15,8 @@ class Apricot.Views.Images.SubmitView extends Backbone.View
     )
 
   save: (e) ->
-    e.preventDefault()
-    e.stopPropagation()
+    # e.preventDefault()
+    # e.stopPropagation()
 
     console.log "hi"
     data = new FormData()
