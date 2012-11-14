@@ -16,3 +16,6 @@
 
 # NO MORE DSSTORE
 .DS_Store
+
+# Ignore the uploaded images
+/public/system/
