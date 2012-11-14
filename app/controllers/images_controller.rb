@@ -3,6 +3,10 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     @images = Image.all
+    @images.each do |image|
+      image.tags_string = image.tag_list.join " "
+      image.save
+    end
 
     respond_to do |format|
       format.html # index.html.erb
