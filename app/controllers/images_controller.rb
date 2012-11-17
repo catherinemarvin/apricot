@@ -37,11 +37,13 @@ class ImagesController < ApplicationController
   # PUT /images/1.json
   def update
     @image = Image.find(params[:id])
+    @image.tag_list = params[:tag_list]
 
     respond_to do |format|
-      if @image.update_attributes(params[:image])
-        format.html { redirect_to @image, notice: 'Image was successfully updated.' }
-        format.json { head :no_content }
+      if @image.save
+        # format.html { redirect_to @image, notice: 'Image was successfully updated.' }
+        # format.json { head :no_content }
+        format.html { render json: @image }
       else
         format.html { render action: "edit" }
         format.json { render json: @image.errors, status: :unprocessable_entity }
