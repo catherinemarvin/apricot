@@ -19,9 +19,7 @@ class ImagesController < ApplicationController
       if @image
         @image.url = @image.data.url
         @image.save
-        # format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        # format.json { render json: @image, status: :created, location: @image }
-        format.html { render json: @image, status: :created, location: @image }
+        format.html { redirect_to "/images##{@image.id}" }
       else
         format.html { render action: "new" }
         format.json { render json: @image.errors, status: :unprocessable_entity }
@@ -35,11 +33,11 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @image.tag_list = params[:tag_list]
 
+
     respond_to do |format|
       if @image.save
-        # format.html { redirect_to @image, notice: 'Image was successfully updated.' }
-        # format.json { head :no_content }
-        format.html { render json: @image }
+        format.html { render json: @image.to_json }
+        # format.html { redirect_to "/images##{@image.id}" }
       else
         format.html { render action: "edit" }
         format.json { render json: @image.errors, status: :unprocessable_entity }
