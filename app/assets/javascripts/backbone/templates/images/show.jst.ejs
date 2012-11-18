@@ -1,7 +1,10 @@
 <img src="<%= url %>">
 
 <br>
-<b>Tags</b>
+<b>Tags!!!</b>
+<% for (var i = 0; i < tags.length; i++) { %>
+  <p><%= tags[i].name %></p>
+<% } %>
 <br>
 
 <a href="#<%= id %>/edit">Edit</a> | <a href="#index">Home</a>

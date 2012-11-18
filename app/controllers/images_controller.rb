@@ -36,7 +36,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { render json: @image.to_json }
+        format.html { render json: @image.to_json(:include => :tags) }
         # format.html { redirect_to "/images##{@image.id}" }
       else
         format.html { render action: "edit" }

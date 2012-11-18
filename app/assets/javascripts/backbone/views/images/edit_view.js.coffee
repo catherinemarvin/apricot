@@ -5,6 +5,7 @@ class Apricot.Views.Images.EditView extends Backbone.View
 
   events :
     "submit #edit-image" : "update"
+    "ajax:success" : "redirectToImage"
 
   update : (e) ->
     e.preventDefault()
@@ -15,6 +16,10 @@ class Apricot.Views.Images.EditView extends Backbone.View
         @model = image
         window.location.hash = "/#{@model.id}"
     )
+
+  redirectToImage : (xhr, data, status) ->
+    @model.set JSON.parse data
+    window.location.hash = "/#{@model.id}"
 
   render : ->
     $(@el).html(@template(@model.toJSON() ))
