@@ -1,3 +1,5 @@
+<% old_tags = tags.map(function (x) { return x.name; }).join(","); %>
+
 <h1>Edit image</h1>
 
 <img src="<%= url %>">
@@ -5,7 +7,7 @@
 <form action="/images/<%= id %>" method="put" accept-charset="UTF-8" name="image" data-remote="true">
   <div class="field">
     <label for="tag_list"> tags:</label>
-    <input type="text" name="tag_list" id="tag_list">
+    <input type="text" name="tag_list" id="tag_list" value="<%= old_tags %>">
   </div>
 
   <div class="actions">
