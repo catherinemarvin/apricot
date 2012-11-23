@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     @images = Image.all
-
+    @tags = Image.tag_counts_on(:tags)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render @images.to_json(:include => :tags) }

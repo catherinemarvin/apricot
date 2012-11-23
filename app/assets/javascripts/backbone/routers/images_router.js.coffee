@@ -5,6 +5,10 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     @toolbar = new Apricot.Views.Toolbars.Toolbar()
     $("#toolbar").html(@toolbar.render().el)
 
+    @tags = new Apricot.Collections.TagsCollection()
+    @tags.reset options.tags
+
+
 
   routes:
     "submit" : "submitImage"
@@ -38,7 +42,7 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     $("#images").html("Random is THE FUTURE")
 
   tags: ->
-    @view = new Apricot.Views.Tags.TagCloudView()
+    @view = new Apricot.Views.Tags.TagCloudView(tags: @tags)
     $("#images").html(@view.render().el)
 
   info: ->

@@ -3,6 +3,8 @@ Apricot::Application.routes.draw do
 
   match '/' => 'page#index'
 
+  match '/tags' => 'tags#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

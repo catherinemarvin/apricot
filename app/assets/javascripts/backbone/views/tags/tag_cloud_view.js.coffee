@@ -8,5 +8,5 @@ class Apricot.Views.Tags.TagCloudView extends Backbone.View
     # @options.images.bind('reset', @addAll)
 
   render: =>
-    $(@el).html @template
+    $(@el).html(@template(tag_cloud: @options.tags ))
     return this
