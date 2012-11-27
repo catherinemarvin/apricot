@@ -1,5 +1,5 @@
 <p>tags here</p>
 
 <% for (var i = 0; i < tag_cloud.models.length; i++) { %>
-  <p> <%= tag_cloud.models[i].toJSON().name %> </p>
+  <p> <%= tag_cloud.models[i].toJSON().name %> (<%= tag_cloud.models[i].toJSON().count %>) </p>
 <% } %>
