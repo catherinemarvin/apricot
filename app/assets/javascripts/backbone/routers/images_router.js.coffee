@@ -42,8 +42,10 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     $("#images").html("Random is THE FUTURE")
 
   tags: ->
-    @view = new Apricot.Views.Tags.TagCloudView(tags: @tags)
-    $("#images").html(@view.render().el)
+    $.getJSON "/tags", (data) =>
+      @tags = new Apricot.Collections.TagsCollection().reset(data)
+      @view = new Apricot.Views.Tags.TagCloudView(tags: @tags)
+      $("#images").html(@view.render().el)
 
   info: ->
     @view = new Apricot.Views.Develop.Information
