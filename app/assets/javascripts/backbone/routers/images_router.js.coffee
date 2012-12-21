@@ -18,6 +18,7 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     "info" : "info"
     ":id/edit" : "edit"
     ":id" : "show"
+    "search/:params" : "search"
     ".*" : "index"
 
   submitImage: ->
@@ -50,3 +51,10 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
   info: ->
     @view = new Apricot.Views.Develop.Information
     $("#images").html(@view.render().el)
+
+  search: (params) ->
+    # note that the images are passed in through the ajax call
+    $.getJSON "/images/search", {tag: params}, (images) ->
+      @images = new Apricot.Collections.ImagesCollection().reset(images)
+      @view = new Apricot.Views.Images.SearchView(images: @images)
+      $("#images").html(@view.render().el)

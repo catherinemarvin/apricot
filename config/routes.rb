@@ -1,9 +1,12 @@
 Apricot::Application.routes.draw do
+  match '/images/search/' => 'images#search'
+
   resources :images
 
   match '/' => 'page#index'
 
   match '/tags' => 'tags#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

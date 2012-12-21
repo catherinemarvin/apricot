@@ -56,4 +56,14 @@ class ImagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /images/search/
+  def search
+    @images = Image.tagged_with(params[:tag])
+
+    respond_to do |format|
+      format.html { render json: @images.to_json }
+      format.json { render json: @images.to_json }
+    end
+  end
 end
