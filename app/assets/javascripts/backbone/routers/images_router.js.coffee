@@ -4,6 +4,8 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     @images.reset options.images
     @toolbar = new Apricot.Views.Toolbars.Toolbar()
     $("#toolbar").html(@toolbar.render().el)
+    @footer = new Apricot.Views.Toolbars.Footer()
+    $("#footer").html(@footer.render().el)
 
     @tags = new Apricot.Collections.TagsCollection()
     @tags.reset options.tags

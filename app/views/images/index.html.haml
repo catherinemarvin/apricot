@@ -4,6 +4,8 @@
 
   #images
 
+#footer
+
 :javascript
   $(function () {
     window.router = new Apricot.Routers.ImagesRouter({images: #{@images.to_json(:include => "tags").html_safe}, tags: #{@tags.to_json}});
