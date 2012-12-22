@@ -3,7 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
 	padding-top: 60px;
+  background-image: url("gray_jean.png");
 }
+
+h1 {
+  font-family: "Lobster", Georgia, Times, serif;
+  font-size: 70px;
+  line-height: 100px;
+}
+
+p {
+  font-family: "Cabin", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+#imagesWrapper {
+  background: white;
+  width: 996px;
+  padding: 5px 5px;
+  margin: auto;
+}
+
 .box img {
 	height: 100px;
 	float: left;
