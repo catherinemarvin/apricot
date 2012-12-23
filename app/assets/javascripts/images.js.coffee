@@ -4,12 +4,11 @@
 
 container = $ '#thumbnails'
 
-container.imagesLoaded( () ->
-	container.masonry({
-		itemSelector : '.box'
-	})
-)
+container.imagesLoaded ->
+  container.masonry {
+    itemSelector : '.box'
+  }
 
 $(".box").click((e) ->
-	console.log "hi"
+  console.log "hi"
 )
