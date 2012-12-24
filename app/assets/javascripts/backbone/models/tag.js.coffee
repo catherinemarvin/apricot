@@ -7,3 +7,5 @@ class Apricot.Models.Tag extends Backbone.Model
 class Apricot.Collections.TagsCollection extends Backbone.Collection
   model: Apricot.Models.Tag
   url: '/tags'
+  comparator: (tag) ->
+    tag.get "name"
