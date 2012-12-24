@@ -1,5 +1,7 @@
-<p>tags here</p>
+<h1>Tag Cloud</h1>
 
-<% for (var i = 0; i < tag_cloud.models.length; i++) { %>
-  <p> <%= tag_cloud.models[i].toJSON().name %> (<%= tag_cloud.models[i].toJSON().count %>) </p>
+<% var tagModels = tag_cloud.models; %>
+
+<% for (var i = 0; i < tagModels.length; i++) { %>
+  <p> <a href="#search/<%= tagModels[i].toJSON().name %>"><%= tagModels[i].toJSON().name %> (<%= tagModels[i].toJSON().count %>)</a> </p>
 <% } %>
