@@ -42,7 +42,10 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     $("#images").html(@view.render().el)
 
   random: ->
-    $("#images").html("Random is THE FUTURE")
+    $.getJSON "/images/random", (images) ->
+      @images = new Apricot.Collections.ImagesCollection().reset(images)
+      @view = new Apricot.Views.Images.RandomView images: @images
+      $("#images").html(@view.render().el)
 
   tags: ->
     $.getJSON "/tags", (data) =>

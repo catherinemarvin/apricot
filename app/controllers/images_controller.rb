@@ -66,4 +66,12 @@ class ImagesController < ApplicationController
       format.json { render json: @images.to_json }
     end
   end
+
+  # GET /images/random/
+  def random
+    @images = Image.find :all, :order => "RANDOM()"
+    respond_to do |format|
+      format.json { render json: @images.to_json }
+    end
+  end
 end

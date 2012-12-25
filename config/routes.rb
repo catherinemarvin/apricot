@@ -1,5 +1,6 @@
 Apricot::Application.routes.draw do
   match '/images/search/' => 'images#search'
+  match '/images/random' => 'images#random'
 
   resources :images
 
