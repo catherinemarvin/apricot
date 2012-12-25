@@ -13,6 +13,11 @@ gem 'haml-rails'
 
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
+group :development do
+  gem 'sqlite3'
+  gem "taps", :require => false
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
