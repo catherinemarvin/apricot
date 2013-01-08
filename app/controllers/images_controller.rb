@@ -18,6 +18,7 @@ class ImagesController < ApplicationController
     respond_to do |format|
       if @image
         @image.url = @image.data.url
+        @image.unreviewed = true
         @image.save
         format.html { redirect_to "/images##{@image.id}" }
       else
