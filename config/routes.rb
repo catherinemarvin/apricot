@@ -2,6 +2,8 @@ Apricot::Application.routes.draw do
   match '/images/search/' => 'images#search'
   match '/images/random' => 'images#random'
 
+  match '/images/admin' => 'images#admin'
+
   resources :images
 
   match '/' => 'page#index'

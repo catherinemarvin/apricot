@@ -18,6 +18,7 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
     "random" : "random"
     "tags" :  "tags"
     "info" : "info"
+    "admin" : "admin"
     ":id/edit" : "edit"
     ":id" : "show"
     "search/:params" : "search"
@@ -63,3 +64,7 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
       @images = new Apricot.Collections.ImagesCollection().reset(images)
       @view = new Apricot.Views.Images.SearchView(images: @images)
       $("#images").html(@view.render().el)
+
+  admin: ->
+    @view = new Apricot.Views.Images.AdminView
+    $("#images").html @view.render().el
