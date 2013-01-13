@@ -8,6 +8,6 @@
 
 :javascript
   $(function () {
-    window.router = new Apricot.Routers.ImagesRouter({images: #{@images.to_json(:include => "tags").html_safe}, tags: #{@tags.to_json}});
+    window.router = new Apricot.Routers.ImagesRouter({images: #{@images.to_json(:include => "tags").html_safe}, tags: #{@tags.to_json}, unreviewed_images: #{@unreviewed_images.to_json}});
     Backbone.history.start();
   });

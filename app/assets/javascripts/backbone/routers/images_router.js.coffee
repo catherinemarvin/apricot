@@ -2,6 +2,10 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
   initialize: (options) ->
     @images = new Apricot.Collections.ImagesCollection()
     @images.reset options.images
+
+    @unreviewed_images = new Apricot.Collections.ImagesCollection()
+    @unreviewed_images.reset options.unreviewed_images
+
     @toolbar = new Apricot.Views.Toolbars.Toolbar()
     $("#toolbar").html(@toolbar.render().el)
     @footer = new Apricot.Views.Toolbars.Footer()
@@ -66,5 +70,5 @@ class Apricot.Routers.ImagesRouter extends Backbone.Router
       $("#images").html(@view.render().el)
 
   admin: ->
-    @view = new Apricot.Views.Images.AdminView
+    @view = new Apricot.Views.Images.AdminView(images: @images, unreviewed_images: @unreviewed_images)
     $("#images").html @view.render().el
