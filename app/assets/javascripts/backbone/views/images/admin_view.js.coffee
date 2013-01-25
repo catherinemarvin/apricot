@@ -10,7 +10,7 @@ class Apricot.Views.Images.AdminView extends Backbone.View
     @options.unreviewed_images.each(@addOne)
 
   addOne: (image) =>
-    view = new Apricot.Views.Images.ImageView({model : image})
+    view = new Apricot.Views.Images.AdminImageView({model : image})
     @$("#thumbnails").append(view.render().el)
 
   render: =>
