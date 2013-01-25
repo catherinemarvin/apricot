@@ -3,10 +3,10 @@ Apricot.Views.Images ||= {}
 class Apricot.Views.Images.AdminView extends Backbone.View
   template: JST["backbone/templates/images/admin"]
 
-  initialize: () ->
+  initialize: ->
     @options.unreviewed_images.bind('reset', @addAll)
 
-  addAll: () =>
+  addAll: =>
     @options.unreviewed_images.each(@addOne)
 
   addOne: (image) =>
@@ -17,4 +17,4 @@ class Apricot.Views.Images.AdminView extends Backbone.View
     $(@el).html(@template(images: @options.unreviewed_images.toJSON() ))
     @addAll()
 
-    return this
+    return @
