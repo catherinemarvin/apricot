@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
   def index
     @images = Image.find :all, :conditions => { :unreviewed => false }
     @tags = Image.tag_counts_on(:tags)
-    @unreviewed_images = Image.find :all, :conditions => { :unreviewed => true }
+    @unreviewed_images = Image.find :all, :conditions => { :unreviewed => [true, nil] }
     respond_to do |format|
       format.html # index.html.erb
       format.json { render @images.to_json(:include => :tags) }
