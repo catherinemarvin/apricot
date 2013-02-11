@@ -5,5 +5,4 @@ class Apricot.Views.Images.ShowView extends Backbone.View
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))
-
-    return this
+    @
